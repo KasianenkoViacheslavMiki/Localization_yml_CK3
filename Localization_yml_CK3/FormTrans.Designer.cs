@@ -66,7 +66,7 @@
             // выбратьПапкуToolStripMenuItem
             // 
             this.выбратьПапкуToolStripMenuItem.Name = "выбратьПапкуToolStripMenuItem";
-            this.выбратьПапкуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выбратьПапкуToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.выбратьПапкуToolStripMenuItem.Text = "Выбрать папку";
             this.выбратьПапкуToolStripMenuItem.Click += new System.EventHandler(this.выбратьПапкуToolStripMenuItem_Click);
             // 
