@@ -42,6 +42,8 @@ namespace Localization_yml_CK3
         private void buttonTranslate_Click(object sender, EventArgs e)
         {
             FileYML.OpenFile(folderLocalization.SelectedPath, comboBox_SourceLanguage.Text,out table_loc);
+            FormTable form = new FormTable(table_loc);
+            form.Show();
         }
     }
 }

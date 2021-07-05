@@ -30,13 +30,15 @@ namespace LabTable
             return _cols;
         }
 
-        static public void Insert(string _file,string _name, string _text, DataTable _table)
+        static public DataTable Insert(string _file,string _name, string _text, DataTable _table)
         {
+
             DataRow row = _table.NewRow();
             row["file"] = _file;
             row["name"] = _name;
             row["text"] = _text;
             _table.Rows.Add(row);
+            return _table;
         }
         static public void InsertTransl(string _localizationText, DataTable _table)
         {

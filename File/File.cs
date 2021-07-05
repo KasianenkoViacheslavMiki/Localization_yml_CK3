@@ -10,8 +10,11 @@ namespace LabFile
 {
     public class FileYML
     {
-        static private Regex regex_text = new Regex(@"\s\S*:\d\s", RegexOptions.IgnoreCase);
-        static private Regex regex_name = new Regex(@"\u0022\D*\u0022", RegexOptions.IgnoreCase);
+        static string pattern_name = @"\u0022\D*\u0022";
+        static string pattern_text = @"\s\S*:\d\s";
+        static private Regex regex_If = new Regex(pattern_text+ pattern_name, RegexOptions.IgnoreCase);
+        static private Regex regex_text = new Regex(pattern_text, RegexOptions.IgnoreCase);
+        static private Regex regex_name = new Regex(pattern_name, RegexOptions.IgnoreCase);
         
         static private List<TextYML> ReadYML(string _file)
         {
@@ -20,17 +23,19 @@ namespace LabFile
             Console.WriteLine(_file);
             using (StreamReader fs = File.OpenText(_file))
             {
-                fs.ReadLine();
                 while (!fs.EndOfStream)
                 {
-                    TextYML temp = new TextYML();
                     line = fs.ReadLine();
-                    Console.WriteLine("all "+line);
-                    Console.WriteLine("name " + regex_name.Split(line)[0]);
-                    Console.WriteLine("text " + regex_text.Split(line)[1]);
-                    temp.Name= regex_name.Split(line)[0];
-                    temp.Text = regex_text.Split(line)[1];
-                    textYML.Add(temp);
+                    Console.WriteLine("all " + line);
+                    if (regex_If.IsMatch(line)) {
+                        TextYML temp = new TextYML();
+                        
+                        Console.WriteLine("name " + regex_name.Split(line)[0]);
+                        Console.WriteLine("text " + regex_text.Split(line)[1]);
+                        temp.Name = regex_name.Split(line)[0];
+                        temp.Text = regex_text.Split(line)[1];
+                        textYML.Add(temp);
+                    }
                 }
             }
             return textYML;
@@ -43,7 +48,8 @@ namespace LabFile
                 List<TextYML> textYML = ReadYML(file);
                 foreach (TextYML transYML in textYML)
                 {
-                    Insert(file, transYML.Name, transYML.Text, table_loc);
+                    Console.WriteLine(transYML);
+                    table_loc = Insert(file, transYML.Name, transYML.Text, table_loc);
                 }
             }
         }
