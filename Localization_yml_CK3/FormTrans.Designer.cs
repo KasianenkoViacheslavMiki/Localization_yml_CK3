@@ -44,6 +44,7 @@
             // folderLocalization
             // 
             this.folderLocalization.Description = "Выбрать папку localization мода";
+            this.folderLocalization.RootFolder = System.Environment.SpecialFolder.UserProfile;
             // 
             // menu
             // 
@@ -66,12 +67,14 @@
             // выбратьПапкуToolStripMenuItem
             // 
             this.выбратьПапкуToolStripMenuItem.Name = "выбратьПапкуToolStripMenuItem";
-            this.выбратьПапкуToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.выбратьПапкуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.выбратьПапкуToolStripMenuItem.Text = "Выбрать папку";
             this.выбратьПапкуToolStripMenuItem.Click += new System.EventHandler(this.выбратьПапкуToolStripMenuItem_Click);
             // 
             // comboBox_SourceLanguage
             // 
+            this.comboBox_SourceLanguage.Enabled = false;
+            this.comboBox_SourceLanguage.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.comboBox_SourceLanguage.FormattingEnabled = true;
             this.comboBox_SourceLanguage.Items.AddRange(new object[] {
             "english"});
@@ -91,6 +94,8 @@
             // 
             // comboBox_RecipientLanguage
             // 
+            this.comboBox_RecipientLanguage.Enabled = false;
+            this.comboBox_RecipientLanguage.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.comboBox_RecipientLanguage.FormattingEnabled = true;
             this.comboBox_RecipientLanguage.Items.AddRange(new object[] {
             "russian"});
@@ -110,6 +115,8 @@
             // 
             // buttonTranslate
             // 
+            this.buttonTranslate.Enabled = false;
+            this.buttonTranslate.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonTranslate.Location = new System.Drawing.Point(88, 92);
             this.buttonTranslate.Name = "buttonTranslate";
             this.buttonTranslate.Size = new System.Drawing.Size(121, 23);

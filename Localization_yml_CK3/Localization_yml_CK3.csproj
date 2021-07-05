@@ -80,5 +80,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataTable\DataTable.csproj">
+      <Project>{a37930c9-ce45-469f-9feb-7a6b4560c238}</Project>
+      <Name>DataTable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\File\File.csproj">
+      <Project>{d566ef94-079d-4076-9141-b69eb8e8145c}</Project>
+      <Name>File</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

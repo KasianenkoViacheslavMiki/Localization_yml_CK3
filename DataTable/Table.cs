@@ -1,24 +1,47 @@
 ﻿using System;
 using System.Data;
 
-namespace DataTables
+namespace LabTable
 {
-    public class Table
+    public class TableYML
     {
-        public DataTable CreateTable()
+        public struct TextYML
         {
-            DataTable table = new DataTable("OrderDetail");
-            DataColumn[] cols ={
-                                  new DataColumn("ID",typeof(Int32)),
-                                  new DataColumn("Name",typeof(String)),
-                                  new DataColumn("Text",typeof(String)),
-                                  new DataColumn("LocalizationText",typeof(String)),
-                              };
+            private string name;
+            private string text;
 
-            table.Columns.AddRange(cols);
-            table.PrimaryKey = new DataColumn[] { table.Columns["ID"] };
-            return table;
+            public string Name { get => name; set => name = value; }
+            public string Text { get => text; set => text = value; }
+        }
+        static public DataTable CreateTable()
+        {
+            DataTable table_Loc = new DataTable();
+            table_Loc.Columns.AddRange(CreateColumn());
+            return table_Loc;
+        }
+        static private DataColumn[] CreateColumn()
+        {
+            DataColumn[] _cols ={
+                                  new DataColumn("file",typeof(String)),
+                                  new DataColumn("name",typeof(String)),
+                                  new DataColumn("text",typeof(String)),
+                                  new DataColumn("localizationText",typeof(String)),
+                              };
+            return _cols;
         }
 
+        static public void Insert(string _file,string _name, string _text, DataTable _table)
+        {
+            DataRow row = _table.NewRow();
+            row["file"] = _file;
+            row["name"] = _name;
+            row["text"] = _text;
+            _table.Rows.Add(row);
+        }
+        static public void InsertTransl(string _localizationText, DataTable _table)
+        {
+            DataRow row = _table.NewRow();
+            _table.Rows.Add();
+        }
     }
 }

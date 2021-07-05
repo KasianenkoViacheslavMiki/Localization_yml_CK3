@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using LabTable;
+using System;
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LabFile;
+using System.Text.RegularExpressions;
+using System.Drawing;
 
 namespace Localization_yml_CK3
 {
     public partial class formTrans : Form
     {
+        DataTable table_loc = TableYML.CreateTable();
         public formTrans()
         {
             InitializeComponent();
@@ -24,23 +20,28 @@ namespace Localization_yml_CK3
         {
             folderLocalization.ShowDialog();
             System.Console.WriteLine(folderLocalization.SelectedPath);
+            Regex regex_text = new Regex(@"localization", RegexOptions.IgnoreCase);
+            if (!regex_text.IsMatch(folderLocalization.SelectedPath)){
+                MessageBox.Show(
+       "Не найдена папка localization",
+       "Ошибка",
+       MessageBoxButtons.OK,
+       MessageBoxIcon.Information,
+       MessageBoxDefaultButton.Button1,
+       MessageBoxOptions.ServiceNotification);
+                return;
+            }
+            comboBox_SourceLanguage.Enabled = true;
+            comboBox_SourceLanguage.ForeColor = SystemColors.ControlText;
+            comboBox_RecipientLanguage.Enabled = true;
+            comboBox_RecipientLanguage.ForeColor = SystemColors.ControlText;
+            buttonTranslate.Enabled = true;
+            buttonTranslate.ForeColor = SystemColors.ControlText;
         }
 
         private void buttonTranslate_Click(object sender, EventArgs e)
         {
-          //  Regex begin_regex = new Regex(@"l_"+comboBox_SourceLanguage.Text+":", RegexOptions.IgnoreCase|RegexOptions.Multiline);
-            Regex next_regex = new Regex(@"^\D*:\d\s\x22\D*\x22", RegexOptions.IgnoreCase);
-            string[] files = Directory.GetFiles(folderLocalization.SelectedPath +'\u005c'+comboBox_SourceLanguage.Text, "*.yml", SearchOption.AllDirectories);
-            foreach (string file in files)
-                using (StreamReader fs = File.OpenText(file))
-                {
-                    while (fs.EndOfStream)
-                    {
-                        System.Console.WriteLine(fs.ReadLine());
-                    }
-                }
-
-            }
+            FileYML.OpenFile(folderLocalization.SelectedPath, comboBox_SourceLanguage.Text,out table_loc);
         }
     }
 }
