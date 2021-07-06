@@ -26,12 +26,11 @@ namespace LabFile
                 while (!fs.EndOfStream)
                 {
                     line = fs.ReadLine();
-                    Console.WriteLine("all " + line);
+                   // Console.WriteLine("all " + line);
                     if (regex_If.IsMatch(line)) {
                         TextYML temp = new TextYML();
-                        
-                        Console.WriteLine("name " + regex_name.Split(line)[0]);
-                        Console.WriteLine("text " + regex_text.Split(line)[1]);
+                        //Console.WriteLine("name " + regex_name.Split(line)[0]);
+                        //Console.WriteLine("text " + regex_text.Split(line)[1]);
                         temp.Name = regex_name.Split(line)[0];
                         temp.Text = regex_text.Split(line)[1];
                         textYML.Add(temp);
@@ -48,7 +47,6 @@ namespace LabFile
                 List<TextYML> textYML = ReadYML(file);
                 foreach (TextYML transYML in textYML)
                 {
-                    Console.WriteLine(transYML);
                     table_loc = Insert(file, transYML.Name, transYML.Text, table_loc);
                 }
             }

@@ -10,9 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ICO", "ICO", "{4B216DDE-F9E
 		28px-Icon_CK3.ico = 28px-Icon_CK3.ico
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTable", "DataTable\DataTable.csproj", "{A37930C9-CE45-469F-9FEB-7A6B4560C238}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTable", "DataTable\DataTable.csproj", "{A37930C9-CE45-469F-9FEB-7A6B4560C238}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File", "File\File.csproj", "{D566EF94-079D-4076-9141-B69EB8E8145C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "File", "File\File.csproj", "{D566EF94-079D-4076-9141-B69EB8E8145C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_translate", "API_translate\API_translate.csproj", "{A3152C45-6DF3-46A0-8911-36F80472A4C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{D566EF94-079D-4076-9141-B69EB8E8145C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D566EF94-079D-4076-9141-B69EB8E8145C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D566EF94-079D-4076-9141-B69EB8E8145C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3152C45-6DF3-46A0-8911-36F80472A4C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3152C45-6DF3-46A0-8911-36F80472A4C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3152C45-6DF3-46A0-8911-36F80472A4C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3152C45-6DF3-46A0-8911-36F80472A4C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
