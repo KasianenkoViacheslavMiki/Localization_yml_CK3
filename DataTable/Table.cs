@@ -9,9 +9,11 @@ namespace LabTable
         {
             private string name;
             private string text;
+            private string text_Translate;
 
             public string Name { get => name; set => name = value; }
             public string Text { get => text; set => text = value; }
+            public string Text_Translate { get => text_Translate; set => text_Translate = value; }
         }
         static public DataTable CreateTable()
         {
@@ -30,13 +32,14 @@ namespace LabTable
             return _cols;
         }
 
-        static public DataTable Insert(string _file,string _name, string _text, DataTable _table)
+        static public DataTable Insert(string _file,string _name, string _text, string _localizationText,DataTable _table)
         {
 
             DataRow row = _table.NewRow();
             row["file"] = _file;
             row["name"] = _name;
             row["text"] = _text;
+            row["localizationText"] = _localizationText;
             _table.Rows.Add(row);
             return _table;
         }

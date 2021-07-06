@@ -5,6 +5,7 @@ using System.Data;
 using LabTable;
 using static LabTable.TableYML;
 using System.Collections.Generic;
+using API_translate;
 
 namespace LabFile
 {
@@ -18,6 +19,7 @@ namespace LabFile
         
         static private List<TextYML> ReadYML(string _file)
         {
+            Translator t = new Translator();
             string line;
             List<TextYML> textYML = new List<TextYML>();
             Console.WriteLine(_file);
@@ -26,13 +28,16 @@ namespace LabFile
                 while (!fs.EndOfStream)
                 {
                     line = fs.ReadLine();
-                   // Console.WriteLine("all " + line);
+                    //Console.WriteLine("all " + line);
                     if (regex_If.IsMatch(line)) {
                         TextYML temp = new TextYML();
                         //Console.WriteLine("name " + regex_name.Split(line)[0]);
                         //Console.WriteLine("text " + regex_text.Split(line)[1]);
                         temp.Name = regex_name.Split(line)[0];
                         temp.Text = regex_text.Split(line)[1];
+                        string translation = t.Translate(temp.Text, "English", "Russian");
+                        temp.Text_Translate = translation;
+                        //Console.WriteLine("text_Translate " + translation);
                         textYML.Add(temp);
                     }
                 }
@@ -47,7 +52,7 @@ namespace LabFile
                 List<TextYML> textYML = ReadYML(file);
                 foreach (TextYML transYML in textYML)
                 {
-                    table_loc = Insert(file, transYML.Name, transYML.Text, table_loc);
+                    table_loc = Insert(file, transYML.Name, transYML.Text, transYML.Text_Translate, table_loc);
                 }
             }
         }

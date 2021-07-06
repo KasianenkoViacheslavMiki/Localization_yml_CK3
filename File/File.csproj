@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\API_translate\API_translate.csproj" />
     <ProjectReference Include="..\DataTable\DataTable.csproj" />
   </ItemGroup>
 
