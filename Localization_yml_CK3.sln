@@ -14,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTable", "DataTable\Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "File", "File\File.csproj", "{D566EF94-079D-4076-9141-B69EB8E8145C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_translate", "API_translate\API_translate.csproj", "{A3152C45-6DF3-46A0-8911-36F80472A4C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_translate", "API_translate\API_translate.csproj", "{A3152C45-6DF3-46A0-8911-36F80472A4C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeFile", "TreeFile\TreeFile.csproj", "{46BC7567-CE9D-4577-9BAA-7A100C898320}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{A3152C45-6DF3-46A0-8911-36F80472A4C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3152C45-6DF3-46A0-8911-36F80472A4C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3152C45-6DF3-46A0-8911-36F80472A4C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46BC7567-CE9D-4577-9BAA-7A100C898320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46BC7567-CE9D-4577-9BAA-7A100C898320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46BC7567-CE9D-4577-9BAA-7A100C898320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46BC7567-CE9D-4577-9BAA-7A100C898320}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
