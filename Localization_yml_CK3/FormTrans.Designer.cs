@@ -30,15 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formTrans));
             this.folderLocalization = new System.Windows.Forms.FolderBrowserDialog();
-            this.menu = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выбратьПапкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox_SourceLanguage = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox_RecipientLanguage = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.buttonTranslate = new System.Windows.Forms.Button();
-            this.menu.SuspendLayout();
+            this.button_load = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button_save = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // folderLocalization
@@ -46,103 +52,134 @@
             this.folderLocalization.Description = "Выбрать папку localization мода";
             this.folderLocalization.RootFolder = System.Environment.SpecialFolder.UserProfile;
             // 
-            // menu
-            // 
-            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
-            this.menu.Location = new System.Drawing.Point(0, 0);
-            this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(300, 24);
-            this.menu.TabIndex = 0;
-            this.menu.Text = "menu";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.выбратьПапкуToolStripMenuItem});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // выбратьПапкуToolStripMenuItem
-            // 
-            this.выбратьПапкуToolStripMenuItem.Name = "выбратьПапкуToolStripMenuItem";
-            this.выбратьПапкуToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.выбратьПапкуToolStripMenuItem.Text = "Выбрать папку";
-            this.выбратьПапкуToolStripMenuItem.Click += new System.EventHandler(this.выбратьПапкуToolStripMenuItem_Click);
-            // 
-            // comboBox_SourceLanguage
-            // 
-            this.comboBox_SourceLanguage.Enabled = false;
-            this.comboBox_SourceLanguage.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.comboBox_SourceLanguage.FormattingEnabled = true;
-            this.comboBox_SourceLanguage.Items.AddRange(new object[] {
-            "english"});
-            this.comboBox_SourceLanguage.Location = new System.Drawing.Point(12, 48);
-            this.comboBox_SourceLanguage.Name = "comboBox_SourceLanguage";
-            this.comboBox_SourceLanguage.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_SourceLanguage.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Язык исходник ";
-            // 
-            // comboBox_RecipientLanguage
-            // 
-            this.comboBox_RecipientLanguage.Enabled = false;
-            this.comboBox_RecipientLanguage.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.comboBox_RecipientLanguage.FormattingEnabled = true;
-            this.comboBox_RecipientLanguage.Items.AddRange(new object[] {
-            "russian"});
-            this.comboBox_RecipientLanguage.Location = new System.Drawing.Point(160, 48);
-            this.comboBox_RecipientLanguage.Name = "comboBox_RecipientLanguage";
-            this.comboBox_RecipientLanguage.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_RecipientLanguage.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(157, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Язык реципиент";
-            // 
             // buttonTranslate
             // 
             this.buttonTranslate.Enabled = false;
             this.buttonTranslate.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.buttonTranslate.Location = new System.Drawing.Point(88, 92);
+            this.buttonTranslate.Location = new System.Drawing.Point(330, 498);
             this.buttonTranslate.Name = "buttonTranslate";
-            this.buttonTranslate.Size = new System.Drawing.Size(121, 23);
+            this.buttonTranslate.Size = new System.Drawing.Size(176, 23);
             this.buttonTranslate.TabIndex = 5;
             this.buttonTranslate.Text = "Перевод";
             this.buttonTranslate.UseVisualStyleBackColor = true;
             this.buttonTranslate.Click += new System.EventHandler(this.buttonTranslate_Click);
             // 
+            // button_load
+            // 
+            this.button_load.Location = new System.Drawing.Point(16, 498);
+            this.button_load.Name = "button_load";
+            this.button_load.Size = new System.Drawing.Size(176, 23);
+            this.button_load.TabIndex = 6;
+            this.button_load.Text = "Загрузка файлов локализации";
+            this.button_load.UseVisualStyleBackColor = true;
+            this.button_load.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 482);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Первый шаг";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(327, 482);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Второй шаг";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(822, 467);
+            this.tabControl1.TabIndex = 9;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(814, 441);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Таблица";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.treeView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(814, 441);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Файлова система";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button_save
+            // 
+            this.button_save.Enabled = false;
+            this.button_save.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button_save.Location = new System.Drawing.Point(654, 498);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(176, 23);
+            this.button_save.TabIndex = 10;
+            this.button_save.Text = "Сохранения перевода";
+            this.button_save.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(651, 482);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Третий шаг";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(808, 435);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(6, 3);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(121, 97);
+            this.treeView1.TabIndex = 0;
+            // 
             // formTrans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 133);
-            this.Controls.Add(this.buttonTranslate);
+            this.ClientSize = new System.Drawing.Size(846, 565);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button_save);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox_RecipientLanguage);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox_SourceLanguage);
-            this.Controls.Add(this.menu);
+            this.Controls.Add(this.button_load);
+            this.Controls.Add(this.buttonTranslate);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menu;
             this.Name = "formTrans";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Машинный перевод";
-            this.menu.ResumeLayout(false);
-            this.menu.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,14 +188,17 @@
         #endregion
 
         private System.Windows.Forms.FolderBrowserDialog folderLocalization;
-        private System.Windows.Forms.MenuStrip menu;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выбратьПапкуToolStripMenuItem;
-        private System.Windows.Forms.ComboBox comboBox_SourceLanguage;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox_RecipientLanguage;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonTranslate;
+        private System.Windows.Forms.Button button_load;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
 

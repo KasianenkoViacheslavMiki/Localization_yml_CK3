@@ -36,7 +36,7 @@ namespace LabFile
                         temp.Name = regex_name.Split(line)[0];
                         temp.Text = regex_text.Split(line)[1];
                         string translation = t.Translate(temp.Text, "English", "Russian");
-                        temp.Text_Translate = translation;
+                        temp.Text_Translate = (translation.Replace("\u00AB", "\u0022").Replace("\u00BB.", ".\u0022")).Replace("\u00BB", "\u0022");
                         //Console.WriteLine("text_Translate " + translation);
                         textYML.Add(temp);
                     }
