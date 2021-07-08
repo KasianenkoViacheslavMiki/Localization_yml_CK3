@@ -7,6 +7,7 @@ namespace LabTable
     {
         public struct TextYML
         {
+            private string file;
             private string name;
             private string text;
             private string text_Translate;
@@ -14,6 +15,7 @@ namespace LabTable
             public string Name { get => name; set => name = value; }
             public string Text { get => text; set => text = value; }
             public string Text_Translate { get => text_Translate; set => text_Translate = value; }
+            public string File { get => file; set => file = value; }
         }
         static public DataTable CreateTable()
         {
@@ -42,11 +44,6 @@ namespace LabTable
             row["localizationText"] = _localizationText;
             _table.Rows.Add(row);
             return _table;
-        }
-        static public void InsertTransl(string _localizationText, DataTable _table)
-        {
-            DataRow row = _table.NewRow();
-            _table.Rows.Add();
         }
     }
 }
